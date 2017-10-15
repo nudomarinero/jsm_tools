@@ -1,0 +1,4 @@
+scipy
+pyfits
+pywcs
+git+git://github.com/lofar-astron/PyBDSF.git 
