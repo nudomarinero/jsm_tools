@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 from jsm import extract
-import argparse
+import sys
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Extract sources and data using Tier1 options')
-    parser.add_argument('img', help='Image to use as input')
-    args = parser.parse_args()
+def main(args):
+    args = extract.parse_args(args)
     
     # Get the correct name
     try:
@@ -14,3 +12,8 @@ if __name__ == "__main__":
         img = args.img
     
     extract.extract_tier1(img)
+    return 0
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
+

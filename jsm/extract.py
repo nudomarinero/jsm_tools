@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
+import argparse
 try:
     import bdsf
 except ImportError:
@@ -34,6 +35,14 @@ options_tier1 = {
     "frequency": 144e6
 }
   
+def parse_args(args):
+    """
+    Parse the arguments of the command line
+    """
+    parser = argparse.ArgumentParser(description='Extract sources and data using Tier1 options')
+    parser.add_argument('img', help='Image to use as input')
+    return parser.parse_args(args)
+
 
 def extract_tier1(input_image, options=options_tier1):
     """
